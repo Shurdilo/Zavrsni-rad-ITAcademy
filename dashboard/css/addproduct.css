@@ -1,0 +1,240 @@
+.content{
+    display: flex;
+    position: relative;
+    left: 70px;
+    width: calc(100% - 70px);
+    transition: all .5s ease-out;
+    padding-top: 50px;
+}
+
+.content.active{
+    position: relative;
+    left: 225px;
+    width: calc(100% - 225px);
+}
+
+.content #add{
+    position: relative;
+    left: 50px;
+    margin-bottom: 25px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: all .35s;
+}
+
+.content #add:hover{
+    background: var(--gray-color);
+    color: var(--secondary-color);
+}
+
+.content #add i{
+    transition: all .35s;
+    transform: translateX(-1px);
+}
+
+.content #add:hover i{
+    transform: translateX(-1px);
+    animation: arrow 2s ease-out infinite;
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateX(-1px);
+    }
+    10% {
+        transform: translateX(-8px);
+    }
+    15% {
+        transform: translateX(2px);
+    }
+    20% {
+        transform: translateX(-4px);
+    }
+    25% {
+        transform: translateX(-1px);
+    }100% {
+        transform: translateX(-1px);
+    }
+}
+
+form{
+    position: relative;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.625rem;
+    width: 25rem;
+    background: var(--gray-color);
+    padding: 50px;
+}
+
+form .form-group.gray{
+    border-bottom: .125rem solid var(--color5);
+    width: 100%;
+}
+
+form .form-group.blue{
+    border-bottom: .125rem solid var(--primary1-second);
+    width: 100%;
+}
+
+form .form-group:after,
+form .form-group:before{
+    content: '';
+    position: absolute;
+    bottom: -.125rem;
+    width: 0;
+    height: .125rem;
+    background-color: var(--primary-color);
+    transition: all .35s;
+}
+
+form .form-group:after{
+    right: 50%;
+}
+
+form .form-group:before{
+    left: 50%;
+}
+
+form .form-group{
+    position: relative;
+    height: 2.812rem;
+}
+
+form .form-group h5{
+    position: absolute;
+    left: .625rem;
+    top: 1.25rem;
+    transform: translateY(-50%);
+    color: var(--color5);
+    font-size: 1.125rem;
+    transition: all .35s;
+}
+
+form .form-group.focus h5{
+    top: -.8rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+form .form-group.focus:after,
+form .form-group.focus:before{
+    width: 50%;
+}
+
+form .form-group input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    outline: none;
+    border: none;
+    background: none;
+    padding: .5rem .625rem;
+    font-size: 1.125rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+form .form-group textarea{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    outline: none;
+    border: none;
+    background: none;
+    padding: .5rem .625rem;
+    font-size: 1.125rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    resize: none;
+}
+
+form .form-group .custom-select select{
+    box-shadow: none;
+    font-size: 1.125rem;
+    padding: .5rem .625rem;
+    background: var(--primary-color);
+    background-image: linear-gradient(to right, var(--primary-color) 0%, var(--primary1-second)  51%,var(--primary-color)  100%);
+    background-size: 200% auto;
+    color: var(--white);
+    font-weight: 700;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+form .form-group .custom-file,
+form .form-group .custom-select{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    top: 0;
+    left: 0;
+    outline: none;
+    border: none;
+    background: none;
+    padding: .5rem .625rem .5rem 0;
+    font-size: .875rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+form .form-group .custom-file button{
+    font-size: 1.125rem;
+    background-image: linear-gradient(to right, var(--primary-color) 0%, var(--primary1-second)  51%,var(--primary-color)  100%);
+    background-size: 200% auto;
+    color: var(--white);
+    font-weight: 700;
+    border: none;
+    outline: none;
+    padding: .5rem .625rem;
+    cursor: pointer;
+    transition: all .35s;
+}
+
+form .form-group .custom-file button:hover{
+    background-position: right center;
+}
+
+form .submit{
+    font-weight: bold;
+    font-size: .875rem;
+    line-height: 1.55rem;
+    cursor: pointer;
+    background-image: linear-gradient(to right, var(--primary-color) 0%, var(--primary1-second)  51%,var(--primary-color)  100%);
+    background-size: 200% auto;
+    margin-top: 1.55rem;
+    padding: .625rem 1rem;
+    border-radius: .312rem;
+    border: none;
+    outline: none;
+    color: var(--white);
+    transition: .5s;
+    width: 100%;
+}
+
+form .submit:hover{
+    background-position: right center;
+}
